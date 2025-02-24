@@ -1,7 +1,5 @@
 const tbody = document.querySelector('tbody');
 const tbodyChild = tbody.getElementsByTagName('tr');
-let popUpContainer = document.querySelector('.pop-up-container');
-let closePopUp = popUpContainer.firstElementChild.lastElementChild.querySelector(".fa-rectangle-xmark");
 
 for (let i = 0; i < tbodyChild.length; i++) {
     const links = tbodyChild[i].lastElementChild.firstElementChild.querySelector('a'); // Ambil semua link di dalam kolom terakhir
@@ -12,7 +10,7 @@ for (let i = 0; i < tbodyChild.length; i++) {
         
             // Arahkan halaman ke URL yang sesuai (index.php?action=edit&id=id)
             window.location.href = `index.php?action=edit&id=${id}`;
-            // popUpContainer.classList.remove('d-none'); // Toggle visibility
+
         });
     } else {
         console.warn(`Tidak ada link di baris ${i + 1}`);
@@ -22,4 +20,3 @@ for (let i = 0; i < tbodyChild.length; i++) {
 closePopUp.addEventListener('click', () => {
     popUpContainer.classList.toggle('d-none');
 })
-

@@ -74,3 +74,20 @@ tbody > tr > td {
         color: white;
     }
 }
+
+.edit-table > div > a {
+    color: white;
+    text-decoration: none;
+}
+
+.button-add-data {
+    background-color: rgba(255, 255, 255, 0.245) !important;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+}
+
+.button-add-data:hover {
+    background-color:  rgba(255, 255, 255, 0.564) !important;
+
+}
+

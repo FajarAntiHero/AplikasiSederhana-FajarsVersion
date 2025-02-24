@@ -3,11 +3,11 @@
         // Create a connection to database
         function createConnection(){
             $databaseHost = 'localhost'; //-> Write the host of database
-            $databaseName = 'crud_db'; // -> Write the name of database
-            $databaseUsername = ''; // -> Write the User Name of database
+            $databaseUsername = 'root'; // -> Write the User Name of database
             $databasePassword = ''; // -> Write the Password of database
+            $databaseName = 'crud_db'; // -> Write the name of database
 
-            return $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+            return mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
         }
     
 
@@ -77,12 +77,7 @@
             $kontak = $_POST['kontak'];
             $alamat = $_POST['alamat'];
 
-            $NAME = 'name';
-            $KELAS = 'kelas';
-            $KONTAK = 'kontak';
-            $ALAMAT = 'alamat';
-
-            $query_insert_data = "UPDATE students SET $NAME = '$name', $KELAS = '$kelas', $KONTAK = '$kontak', $ALAMAT = '$alamat' WHERE id = '$id'";
+            $query_insert_data = "UPDATE users SET name = '$name', kelas = '$kelas', kontak = '$kontak', alamat = '$alamat' WHERE id = '$id'";
 
             if (mysqli_query($mysqli, $query_insert_data)) {
                 header("Location: " . $_SERVER['PHP_SELF']); // Redirect ke halaman yang sama
