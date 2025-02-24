@@ -16,7 +16,3 @@ for (let i = 0; i < tbodyChild.length; i++) {
         console.warn(`Tidak ada link di baris ${i + 1}`);
     }
 }
-
-closePopUp.addEventListener('click', () => {
-    popUpContainer.classList.toggle('d-none');
-})
