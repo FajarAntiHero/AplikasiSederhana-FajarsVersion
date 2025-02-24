@@ -11,13 +11,13 @@ use function Doc\Change\delete\deleteRow;
 $result = connectToDatabase('SELECT * FROM users');
 
 $id = 'id';
-$showPopUP = '';
 
 if (isset($_GET['id']) && isset($_GET['action']) ) {
     $id = $_GET['id'];
     $data_id = $id;
     $action = $_GET['action'];
     
+    // DELETE ACTION
     if ($action == 'delete') {
         deleteRow($_GET['id']); // -> Delete a row
     } 
@@ -25,12 +25,15 @@ if (isset($_GET['id']) && isset($_GET['action']) ) {
 
 if(isset($_POST['submit']) && isset($_POST['action'])){
     $action = $_POST['action'];
+
+    // UPDATE ACTION
     if ($action == 'edit') {
         updateRow($_POST['id']); // -> update row
     }
     
 }
 if (isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['kelas']) && isset($_POST['kontak']) && isset($_POST['alamat'])) { // -> if adding a data
+    // ADD DATA ACTION
     addRow();
 }
 ?>
@@ -47,11 +50,15 @@ if (isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['kelas']) &
 <body>
     <main>
         <header class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 ">
+
+            <!-- TITLE PROGRAM -->
             <div class="container container-md container-lg container-xl container-xxl mb-5 d-flex justify-content-center align-items-center header-content border border-3 border-white rounded-3">
                 <p class="fs-4 mb-0 text-white">
                     Aplikasi Sederhana
                 </p>
             </div>
+
+            <!-- TABLE DATA -->
             <div class="container container-md container-lg container-xl container-xxl border border-3 border-white rounded-3 table-data pb-3 mb-3">
                 <table>
                     <thead>
@@ -184,18 +191,5 @@ if (isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['kelas']) &
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="Src/script.js"></script>
-    <script><?= ""// $showPopUP ?></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('action') === 'edit') {
-                setTimeout(() => {
-                    var myModal = new bootstrap.Modal(document.getElementById('edit-data'));
-                    myModal.show();
-
-                }, 1000)
-            }
-        });
-    </script>
 </body>
 </html>
