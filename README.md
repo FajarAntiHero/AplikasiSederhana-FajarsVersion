@@ -27,7 +27,7 @@ Aplikasi ini merupakan aplikasi berbasis web yang dibuat dengan PHP dan MySQL un
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone https://github.com/FajarAntiHero/AplikasiSederhana-FajarsVersion.git
 ```
 
 ### 2. Buat Database
