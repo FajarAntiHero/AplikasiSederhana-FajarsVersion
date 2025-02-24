@@ -75,8 +75,10 @@ if (isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['kelas']) &
                                 <td><?= $get_user['alamat']?></td>
                                 <td class="d-flex edit-table">
                                     <div class="bg-warning">
+                                        <!-- Button Modal to Edit Data -->
                                         <a href="index.php?action=edit&id=<?=$get_user['id']?>" data-bs-target="#edit-data">Edit</a>
                                     </div>
+                                    <!-- Button to delete data -->
                                     <div class="bg-danger"><a href="index.php?action=delete&id=<?=$get_user['id']?>"; onclick="return confirm('Are Your Sure?')";>Delete</a></div>
                                 </td>
                             </tr>
@@ -85,7 +87,7 @@ if (isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['kelas']) &
                 </table>
             </div>
 
-            <!-- Button trigger modal -->
+            <!-- Button Modal to Add Data -->
             <button type="button" class="btn button-add-data text-white border border-lg border-white" data-bs-toggle="modal" data-bs-target="#tambah-data">
                 Tambahkan data
             </button>
